@@ -4,6 +4,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Tooltip;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 
@@ -21,8 +22,9 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        Tooltip chkTip = new Tooltip("This is the explanation of what this does.\n More stuff on a new line");
 
-
+chkBox1.setTooltip(chkTip);
 
     }//init end
 
