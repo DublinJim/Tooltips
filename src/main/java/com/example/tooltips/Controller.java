@@ -1,13 +1,11 @@
 package com.example.tooltips;
 
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Popup;
-import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -39,11 +37,13 @@ public class Controller implements Initializable {
         lbl1.setTooltip(chkTip);
         lbl1.setOnMouseClicked(mouseEvent -> {
 
-            StackPane secondRoot = new StackPane();
-            Scene secondScene = new Scene(secondRoot, 250, 150);
-            Stage popstage = new Stage();
-            popstage.setScene(secondScene);
-            popstage.show();
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Warning Dialog");
+            alert.setHeaderText(null);
+            alert.setContentText("This is a warning message.");
+            alert.initStyle(StageStyle.UNDECORATED);
+           alert.initStyle(StageStyle.UTILITY);
+            alert.showAndWait();
 
         });
         chkTip.setShowDelay(javafx.util.Duration.millis(100));
