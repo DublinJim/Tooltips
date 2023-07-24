@@ -18,8 +18,10 @@ public class ControllerPopstage implements Initializable {
     public Button popBtn;
     public AnchorPane rootPanePOP;
 
-    private String infoToDisplay;
-private  Stage cancelStage = new Stage();
+    public String infoToDisplay;
+    public String fxmlFileName;
+    private Stage cancelStage = new Stage();
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -29,13 +31,12 @@ private  Stage cancelStage = new Stage();
 
     public void showStage() throws IOException {
         Stage popStage = new Stage(StageStyle.UNDECORATED);
-
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("popstage.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         popStage.setScene(scene);
 
         popStage.show();
-cancelStage=popStage;
+        cancelStage = popStage;
 
     }
 
