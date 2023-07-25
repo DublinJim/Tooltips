@@ -25,6 +25,7 @@ public ControllerPopstage controllerPopstage = new ControllerPopstage();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         //the pop-up
         Popup popup = new Popup();
         Label popLbl = new Label("Information on stuff right here");
