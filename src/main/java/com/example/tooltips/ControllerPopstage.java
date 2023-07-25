@@ -29,15 +29,19 @@ public class ControllerPopstage implements Initializable {
     }
 
 
-    public void showStage() throws IOException {
+    public void showStageEnableAlwaysOnTop() throws IOException {
+        fxmlFileName="popstage.fxml";
+        showStage();
+
+    }
+
+    private void showStage() throws IOException {
         Stage popStage = new Stage(StageStyle.UNDECORATED);
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("popstage.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(fxmlFileName));
         Scene scene = new Scene(fxmlLoader.load());
         popStage.setScene(scene);
-
         popStage.show();
         cancelStage = popStage;
-
     }
 
     private void closePopup() {

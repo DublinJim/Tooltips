@@ -1,6 +1,5 @@
 package com.example.tooltips;
 
-import javafx.event.Event;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
@@ -43,7 +42,7 @@ public ControllerPopstage controllerPopstage = new ControllerPopstage();
 
         lblChoice.setOnMouseClicked(mouseEvent -> {
             try {
-                controllerPopstage.showStage();
+                controllerPopstage.showStageEnableAlwaysOnTop();
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
