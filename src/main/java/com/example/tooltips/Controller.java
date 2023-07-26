@@ -2,6 +2,8 @@ package com.example.tooltips;
 
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.StageStyle;
@@ -21,6 +23,7 @@ public class Controller implements Initializable {
     public Button btnTip;
     public Label lblAlwaysOntopHelp;
     public ChoiceBox choiceBox2;
+    public ImageView imgQuestiion;
 
     private static Tooltip getTooltip() {
         Tooltip chkTip = new Tooltip("Whats this ?\nClick for more info");
@@ -43,6 +46,9 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         choiceBox2.setValue("Squelch Volume");
+        Image image = new Image(getClass().getResourceAsStream("rawBtn.png"));
+
+imgQuestiion.setImage(image);
 
         Tooltip chkTip = getTooltip();
 
