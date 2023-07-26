@@ -22,8 +22,11 @@ public class Controller implements Initializable {
     public ControllerPopstage controllerPopstage = new ControllerPopstage();
     public Button btnTip;
     public Label lblAlwaysOntopHelp;
-    public ChoiceBox choiceBox2;
+    public ChoiceBox<String> choiceBox2;
     public ImageView imgQuestiion;
+    public Label lblLeftAlignHelp;
+    public Image image = new Image(getClass().getResourceAsStream("rawBtn.png"));
+    public Tooltip chkTip;
 
     private static Tooltip getTooltip() {
         Tooltip chkTip = new Tooltip("Whats this ?\nClick for more info");
@@ -46,16 +49,15 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         choiceBox2.setValue("Squelch Volume");
-        Image image = new Image(getClass().getResourceAsStream("rawBtn.png"));
 
         imgQuestiion.setImage(image);
         imgQuestiion.setPreserveRatio(true);
-        Tooltip chkTip = getTooltip();
 
-        lblAlwaysOntopHelp.setText("");
-        lblAlwaysOntopHelp.setTooltip(chkTip);
-        lblAlwaysOntopHelp.setGraphic(imgQuestiion);
+        chkTip = getTooltip();
+        setGraphicLabel(lblAlwaysOntopHelp);
+
         lblAlwaysOntopHelp.setOnMouseClicked(mouseEvent -> alertDisplay());
+
 
         btnTip.setOnMouseClicked(mouseEvent -> {
             try {
@@ -69,4 +71,10 @@ public class Controller implements Initializable {
         btnTip.setTooltip(chkTip);
 
     }//init end
+
+    public void setGraphicLabel(Label node) {
+        node.setText("");
+        node.setTooltip(chkTip);
+        node.setGraphic(imgQuestiion);
+    }
 }//end
