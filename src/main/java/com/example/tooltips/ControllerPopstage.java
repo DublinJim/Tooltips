@@ -24,23 +24,11 @@ public class ControllerPopstage implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-     /*   popBtn.setStyle(
-                "-fx-background-radius: 5em; " +
-                        "-fx-min-width: 15px; " +
-                        "-fx-min-height: 15px; " +
-                        "-fx-max-width: 15px; " +
-                        "-fx-max-height: 15px;"
-        );*/
-
         popBtn.setOnAction(e -> closePopup());
     }
 
-
     public void showStageEnableAlwaysOnTop() throws IOException {
         fxmlFileName="popstage.fxml";
-
-
-
         showStage();
     }
 

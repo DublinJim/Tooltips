@@ -4,7 +4,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
-import javafx.stage.Popup;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
@@ -17,45 +16,11 @@ public class Controller implements Initializable {
     public ComboBox<String> choiceBox1;
 
     public CheckBox chkBox1;
-    public Button btn1;
-    public Label lbl1;
-    public Label lblChoice;
 
-public ControllerPopstage controllerPopstage = new ControllerPopstage();
+    public ControllerPopstage controllerPopstage = new ControllerPopstage();
     public Button btnTip;
-    public Button btnAlwaysOnToTip;
     public Label lblAlwaysOntopHelp;
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-        //the pop-up
-        Popup popup = new Popup();
-        Label popLbl = new Label("Information on stuff right here");
-        popup.getContent().add(popLbl);
-        popup.setAutoHide(true);
-
-
-
-
-//........................
-        Tooltip chkTip = getTooltip();
-
-        lblAlwaysOntopHelp.setTooltip(chkTip);
-        lblAlwaysOntopHelp.setOnMouseClicked(mouseEvent -> alertDisplay());
-
-       btnTip.setOnMouseClicked(mouseEvent -> {
-            try {
-                controllerPopstage.showStageEnableAlwaysOnTop();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        });
-
-
-       btnTip.setTooltip(chkTip);
-
-    }//init end
+    public ChoiceBox choiceBox2;
 
     private static Tooltip getTooltip() {
         Tooltip chkTip = new Tooltip("Whats this ?\nClick for more info");
@@ -74,4 +39,26 @@ public ControllerPopstage controllerPopstage = new ControllerPopstage();
         alert.initStyle(StageStyle.UTILITY);
         alert.showAndWait();
     }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        choiceBox2.setValue("Squelch Volume");
+
+        Tooltip chkTip = getTooltip();
+
+        lblAlwaysOntopHelp.setTooltip(chkTip);
+        lblAlwaysOntopHelp.setOnMouseClicked(mouseEvent -> alertDisplay());
+
+        btnTip.setOnMouseClicked(mouseEvent -> {
+            try {
+                controllerPopstage.showStageEnableAlwaysOnTop();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
+
+
+        btnTip.setTooltip(chkTip);
+
+    }//init end
 }//end
