@@ -37,7 +37,7 @@ public class Controller implements Initializable {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Warning Dialog");
         alert.setHeaderText(null);
-        alert.setContentText("This is a warning message.");
+        alert.setContentText("This is information that may be required to explain the node");
         alert.initStyle(StageStyle.UNDECORATED);
         alert.initStyle(StageStyle.UTILITY);
         alert.showAndWait();
@@ -48,11 +48,13 @@ public class Controller implements Initializable {
         choiceBox2.setValue("Squelch Volume");
         Image image = new Image(getClass().getResourceAsStream("rawBtn.png"));
 
-imgQuestiion.setImage(image);
-
+        imgQuestiion.setImage(image);
+        imgQuestiion.setPreserveRatio(true);
         Tooltip chkTip = getTooltip();
 
+        lblAlwaysOntopHelp.setText("");
         lblAlwaysOntopHelp.setTooltip(chkTip);
+        lblAlwaysOntopHelp.setGraphic(imgQuestiion);
         lblAlwaysOntopHelp.setOnMouseClicked(mouseEvent -> alertDisplay());
 
         btnTip.setOnMouseClicked(mouseEvent -> {

@@ -47,12 +47,12 @@
                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
             </GridPane.margin>
              </CheckBox>
-         <Label fx:id="lblAlwaysOntopHelp" text="?" textAlignment="JUSTIFY" textFill="#1e60e4" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <Label fx:id="lblAlwaysOntopHelp" text="labe;" textAlignment="JUSTIFY" textFill="#1e60e4" GridPane.columnIndex="1" GridPane.rowIndex="1">
             <font>
                <Font size="10.0" />
             </font>
          </Label>
-         <ImageView fx:id="imgQuestiion" fitHeight="34.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <ImageView fx:id="imgQuestiion" fitHeight="34.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
             <GridPane.margin>
                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
             </GridPane.margin>
