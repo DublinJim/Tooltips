@@ -24,6 +24,7 @@ public class Controller implements Initializable {
 public ControllerPopstage controllerPopstage = new ControllerPopstage();
     public Button btnTip;
     public Button btnAlwaysOnToTip;
+    public Label lblAlwaysOntopHelp;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -40,8 +41,8 @@ public ControllerPopstage controllerPopstage = new ControllerPopstage();
 //........................
         Tooltip chkTip = getTooltip();
 
-        btnTip.setTooltip(chkTip);
-       btnTip.setOnMouseClicked(mouseEvent -> alertDisplay());
+        lblAlwaysOntopHelp.setTooltip(chkTip);
+        lblAlwaysOntopHelp.setOnMouseClicked(mouseEvent -> alertDisplay());
 
        btnTip.setOnMouseClicked(mouseEvent -> {
             try {
