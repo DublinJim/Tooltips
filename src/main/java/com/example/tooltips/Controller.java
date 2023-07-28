@@ -29,7 +29,7 @@ public class Controller implements Initializable {
     public Tooltip chkTip;
 
     private static Tooltip getTooltip() {
-        Tooltip chkTip = new Tooltip("Whats this ?\nClick for more info");
+        Tooltip chkTip = new Tooltip("Whats this ?");
         chkTip.setStyle("-fx-font-size: 14px; -fx-font-weight: bold;");
         chkTip.setShowDelay(javafx.util.Duration.millis(100));
 
